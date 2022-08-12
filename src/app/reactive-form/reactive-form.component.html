@@ -1,0 +1,24 @@
+<p>reactive-form works!</p>
+
+<div class="formContainer">
+
+    <form [formGroup]="myForm">
+
+        Value: {{myForm.value | json }}
+
+        <hr>
+
+        <br/>
+
+        <mat-form-field>
+            <input matInput placeholder="email" formControlName="email">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <textarea matInput placeholder="Your Message" formControlName="message"></textarea>
+        </mat-form-field>
+        
+    </form>
+
+</div>
+

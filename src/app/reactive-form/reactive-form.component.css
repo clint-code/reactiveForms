@@ -1,0 +1,12 @@
+.formContainer {
+    width: 70%;
+    margin: 0 auto;
+}
+
+mat-form-field {
+    display: block;
+}
+
+textarea {
+    min-height: 130px;
+}
