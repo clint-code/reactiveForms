@@ -1,8 +1,5 @@
-{
-   "successStatus":"success",
-   "message":"76 records",
-   "body":[
-      {
+[
+   {
          "dateTimeCreated":"2022-03-15T10:14:35.230+03:00",
          "lastModifiedDate":"2022-03-15T10:14:35.230+03:00",
          "ipAddress":"10.244.4.1",
@@ -4182,10 +4179,4 @@
          "checkoff":true,
          "allowCutoffBorrowing":true
       }
-   ],
-   "errors":[
-      
-   ],
-   "responseCode":200,
-   "httpStatus":"OK"
-}
+]
