@@ -2,15 +2,50 @@
     Retrieving and Traversing JSON Data
 </h1>
 
+<h2>Pages and their nested questions</h2>
 
-<ul>
-    <!-- <li *ngFor="let product of jsonData">
-        {{product.productName}}
-    </li> -->
-    <h2>Product Names</h2>
+<section *ngFor="let page of jsonData">
+
+    <div class="pages">
+
+        <h3>
+            Page: {{page.pageOrder}}:{{page.pageTitle}}
+        </h3>
+
+        <h4>
+            {{page.instructions}}
+        </h4>
+
+        <div class="questions">
+
+            <div *ngFor="let question of page.questions">
     
-    <li *ngFor="let products of jsonData">
-        {{products.productName}}
-    </li>
+                <label>{{question?.questionText}}</label>
 
-</ul>
+                <input
+				    *ngIf="question?.fieldType == 'textfield' "
+					[pattern]="question.regularExpression"
+					[maxLength]="question.max"
+					[minLength]="question.min"
+					[id]="question.fieldName"
+					[type]="question.fieldType">
+
+                <select
+                    *ngIf="question?.fieldType == 'select_one'"
+                    [id]="question.fieldName"
+                >
+                    <option
+                        *ngFor="let option of question.options"
+                        [value]="option?.value">
+                        {{option.label}}
+                    </option>
+                
+                </select>
+    
+            </div>
+    
+        </div>
+        
+    </div>
+
+</section>

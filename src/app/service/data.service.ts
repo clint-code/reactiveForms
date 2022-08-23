@@ -27,4 +27,10 @@ export class DataService {
 
   }
 
+  getNestedListingdData(){
+
+    return this.http.get("/assets/data/nested.data.json");
+    
+  }
+
 }

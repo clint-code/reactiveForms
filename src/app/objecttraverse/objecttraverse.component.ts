@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { DataService } from '../service/data.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ObjecttraverseComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dataService.getAllDataListing().subscribe(data => {
+    this.dataService.getNestedListingdData().subscribe(data => {
 
       this.jsonData = data;
 
