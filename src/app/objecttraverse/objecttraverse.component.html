@@ -20,15 +20,17 @@
 
             <div *ngFor="let question of page.questions">
     
-                <label>{{question?.questionText}}</label>
+                <mat-label>{{question?.questionText}}</mat-label>
+                
+                <!-- <mat-form-field></mat-form-field> -->
+                    <input
+                        *ngIf="question?.fieldType == 'textfield' "
+                        [pattern]="question.regularExpression"
+                        [maxLength]="question.max"
+                        [minLength]="question.min"
+                        [id]="question.fieldName"
+                        [type]="question.fieldType">
 
-                <input
-				    *ngIf="question?.fieldType == 'textfield' "
-					[pattern]="question.regularExpression"
-					[maxLength]="question.max"
-					[minLength]="question.min"
-					[id]="question.fieldName"
-					[type]="question.fieldType">
 
                 <select
                     *ngIf="question?.fieldType == 'select_one'"
@@ -41,6 +43,29 @@
                     </option>
                 
                 </select>
+
+                <ng-container *ngFor="let followUpOption of question.options">
+
+                    <div 
+                        class="conditionalRow" 
+                        *ngIf="followUpOption.hasconditionalquestion =='yes'">
+                        
+                        <div *ngFor="let questionToFollow of followUpOption.questionToFollow">
+
+                            <label>
+                                {{questionToFollow.questionText}}
+                            </label>
+
+                            <input
+                                *ngIf="questionToFollow?.fieldType == 'textfield' "
+                                [pattern]="questionToFollow.regularExpression"
+                                [id]="questionToFollow.fieldName"
+                                [type]="questionToFollow.fieldType">
+
+                        </div>
+
+                    </div>
+                </ng-container>
     
             </div>
     

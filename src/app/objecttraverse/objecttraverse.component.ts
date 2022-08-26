@@ -10,6 +10,7 @@ import { DataService } from '../service/data.service';
 export class ObjecttraverseComponent implements OnInit {
 
   jsonData: any;
+  myForm: FormGroup;
 
   constructor(
     public dataService: DataService
