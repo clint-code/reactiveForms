@@ -7,6 +7,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
+
 //material imports
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from '@angular/material/input';
@@ -53,7 +55,8 @@ import { ObjecttraverseComponent } from './objecttraverse/objecttraverse.compone
     MatSelectModule,
     MatCheckboxModule,
     MatChipsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
